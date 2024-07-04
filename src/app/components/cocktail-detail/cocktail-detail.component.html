@@ -1,0 +1,30 @@
+<div *ngIf="cocktail">
+  <button (click)="goBack()">Back</button>
+  <div class="wrapper">
+    <img [src]="cocktail.imageUrl" alt="{{cocktail.name}}" />
+    <div>
+      <div class="display-flex label" style="padding: 20px;">
+        <h2>{{ cocktail.name }}</h2>
+        <span class="icon-star" [class.active]="isFavorite()" (click)="toggleFavorite()">
+          <i [id]="'star-' + cocktail.id"></i>
+        </span>
+      </div>
+      <div class="display-flex">
+        <div style="padding: 20px;">
+          <h4>Type:</h4>
+          <h4>Ingredients:</h4>
+          <h4>Instructions:</h4>
+        </div>
+        <div style="padding: 20px;">
+          <p [appAlcoholStatus]="cocktail.isAlcoholic ? 'Alcoholic' : 'Non alcoholic'">{{ cocktail.isAlcoholic ? 'Alcoholic' : 'Non-alcoholic' }}</p>
+          <ul>
+            <li *ngFor="let ingredient of cocktail.ingredients">{{ ingredient }}</li>
+          </ul>
+          <p>{{ cocktail.instructions }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
