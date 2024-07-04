@@ -5,7 +5,7 @@ import { Cocktail } from '../../interfaces/cocktail';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AlcoholStatusDirective } from '../../alcohol-status.directive';
+import { AlcoholStatusDirective } from '../../directives/alcohol-status.directive';
 
 @Component({
   selector: 'app-cocktail-list',
