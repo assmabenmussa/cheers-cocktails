@@ -1,0 +1,18 @@
+<div>
+  <input type="text" placeholder="Cocktail name" [(ngModel)]="filter" (input)="onFilterChange()" />
+</div>
+<div class="cocktail-list">
+  <div *ngFor="let cocktail of filteredCocktails" class="cocktail-item">
+    <img [src]="cocktail.imageUrl" alt="{{cocktail.name}}" />
+    <a [routerLink]="['/cocktails/' + cocktail.id]" ><h2>{{ cocktail.name }}</h2></a>
+    <p [appAlcoholStatus]="cocktail.isAlcoholic ? 'Alcoholic' : 'Non alcoholic'">{{ cocktail.isAlcoholic ? 'Alcoholic' : 'Non-alcoholic' }}</p>
+    <ul>
+      <li *ngFor="let ingredient of cocktail.ingredients">{{ ingredient }}</li>
+    </ul>
+    <span class="icon-star"
+    (click)="toggleFavorite(cocktail)"  [class.active]="isFavorite(cocktail)">
+      <i [id]="'star-' + cocktail.id" 
+         [class.active]="isFavorite(cocktail)" ></i>
+    </span>
+  </div>
+</div>
