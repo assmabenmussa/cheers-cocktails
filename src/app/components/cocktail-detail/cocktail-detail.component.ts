@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CocktailService } from '../../services/cocktail.service';
 import { Cocktail } from '../../interfaces/cocktail';
 import { CommonModule } from '@angular/common';
-import { AlcoholStatusDirective } from '../../alcohol-status.directive';
+import { AlcoholStatusDirective } from '../../directives/alcohol-status.directive';
 
 @Component({
   selector: 'app-cocktail-detail',
